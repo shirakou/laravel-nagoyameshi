@@ -11,12 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        $table->string('kana')->nullable();
-            $table->string('postal_code')->nullable();
-            $table->string('address')->nullable();
-            $table->string('phone_number')->nullable() ;
-            $table->date('birthday')->nullable();
-            $table->string('occupation')->nullable();
+        Schema::dropIfExists('users');
     }
 
     /**
@@ -24,11 +19,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        $table->dropColumn('kana');
-        $table->dropColumn('postal_code');
-        $table->dropColumn('address');
-        $table->dropColumn('phone_number');
-        $table->dropColumn('birthday');
-        $table->dropColumn('occupation');
+        $table->string('kana');
     }
 };
